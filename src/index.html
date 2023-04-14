@@ -16,6 +16,14 @@
             mobileMenuIcon.classList.add("open")
           }
         })
+        const ticketsMenuItem = document.getElementById("ticket-menu-item");
+        ticketsMenuItem.addEventListener("click", () => {
+          if(ticketsMenuItem.classList.contains("open")){
+            ticketsMenuItem.classList.remove("open");
+          } else {
+            ticketsMenuItem.classList.add("open")
+          }
+        })
       }
     </script>
   </head>
@@ -33,7 +41,18 @@
               <div class="transition-all opacity-100 group-open:opacity-0 w-8 rounded-full bg-zinc-200 h-1 mt-1"></div>
               <div class="top-0 group-open:-top-2 relative transition-all group-open:-rotate-45 w-8 rounded-full bg-zinc-200 h-1 mt-1"></div>
             </div>
-            <div class="absolute bg-gradient-to-r from-rose-500 to-pink-500 w-full left-0 top-[62px] peer-open:block hidden">Mobile</div>
+            <div class="absolute bg-gradient-to-r from-rose-500 to-pink-500 w-full left-0 top-[62px] peer-open:block hidden">
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10"><span>Home</span></div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10"><span>Lineup</span></div>
+              <div id="ticket-menu-item" class="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <div class="p-4 text-center font-bold">Tickets</div>
+                <div class="hidden group-open:block">
+                  <div class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors"><span>Single day ticket</span></div>
+                  <div class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors"><span>7 day ticket</span></div>  
+                </div>
+              </div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10"><span>Suport</span></div>
+            </div>
           </div>
           <div class="flex-1 hidden md:flex items-center justify-end">
             <div class="menu-item">
