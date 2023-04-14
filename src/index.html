@@ -6,6 +6,18 @@
     <link href="../dist/output.css" rel="stylesheet" />
     <script defer src="./assets/fontawesome/js/solid.min.js"></script>
     <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script>
+      window.onload = () => {
+        const mobileMenuIcon = document.getElementById("mobile-menu-button");
+        mobileMenuIcon.addEventListener("click", () => {
+          if(mobileMenuIcon.classList.contains("open")){
+            mobileMenuIcon.classList.remove("open");
+          } else {
+            mobileMenuIcon.classList.add("open")
+          }
+        })
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -15,7 +27,15 @@
             <img src="./assets/images/logo-inverted.png" width="50"/>
             <div class="font-bold text-2xl">tw:<span class="text-sky-900">mf</span></div>
           </div>
-          <div class="flex-1 flex items-center justify-end">
+          <div class="block md:hidden ml-auto pr-4 my-auto cursos-pointer">
+            <div id="mobile-menu-button" class="group peer">
+              <div class="top-0 group-open:top-2 relative group-open:rotate-45 w-8 rounded-full bg-zinc-200 h-1 transition-all"></div>
+              <div class="transition-all opacity-100 group-open:opacity-0 w-8 rounded-full bg-zinc-200 h-1 mt-1"></div>
+              <div class="top-0 group-open:-top-2 relative transition-all group-open:-rotate-45 w-8 rounded-full bg-zinc-200 h-1 mt-1"></div>
+            </div>
+            <div class="absolute bg-gradient-to-r from-rose-500 to-pink-500 w-full left-0 top-[62px] peer-open:block hidden">Mobile</div>
+          </div>
+          <div class="flex-1 hidden md:flex items-center justify-end">
             <div class="menu-item">
               <span>Home</span>
             </div>
